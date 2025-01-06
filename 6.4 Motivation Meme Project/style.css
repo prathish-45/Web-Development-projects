@@ -1,0 +1,26 @@
+body {
+    background-color: black;
+    margin: 0;
+    margin-top: 5%;
+    padding: 0;
+}
+
+.poster {
+    color: whitesmoke;
+    font-family: Carter one;
+    text-align: center;
+    width: 50%;
+    margin-left: 25%;
+
+}
+
+h1 {
+    font-size: 3rem;
+    color: aqua;
+}
+.image {
+    border: 5px solid white;
+    height: 400px;
+    width: 100%;
+    
+ }
