@@ -132,3 +132,52 @@ a {
 .latest-news-head p span {
     color: black;
 }
+
+/* Latest products desc */
+.latest-products{
+    display: flex;
+    gap: 20px;
+}
+
+.list-img img {
+    border-radius: 25px;
+    box-shadow: 2px 10px 5px rgb(221, 221, 221);
+}
+
+.list-img{
+    width: 60%;
+    position: relative;
+    left: 80px;
+}
+.list-content-desc {
+    position: absolute;
+    top: 10px;
+    left: 25px;
+}
+
+.list-content-header {
+    font-size: 28px;
+    font-family: Helvetica;
+    font-weight: bolder;
+}
+
+.list-desc-ai {
+    font-size: 17px;
+    font-family: Helvetica;
+    font-weight: 600;
+    background-image: linear-gradient(108deg, #006bb9 0, #903fcf 32%, #cf0f3c 84%, #b84100 100%);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.list-desc-price {
+    font-size: 14px;
+    font-family: helvetica;
+}
+
+#iphone-16-pro {
+    color: white;
+}
+#iphone-16-pro-price{
+    color: white;
+}
