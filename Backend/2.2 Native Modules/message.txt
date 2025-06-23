@@ -1,0 +1,2 @@
+Hello, World!
+Javascript is the easiest language
