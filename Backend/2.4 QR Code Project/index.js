@@ -5,3 +5,21 @@
 */
 
 import * as fs from 'fs';
+import inquirer from 'inquirer';
+import qrimage from 'qr-image';
+
+inquirer
+    .prompt([
+        {
+            name: 'userInput',
+            message: 'Enter your input: '
+        }
+    ])
+    .then((answer) => {
+        fs.writeFile("message.txt", answer.userInput, (err) => {
+            if(err) throw err;
+            console.log("File written successfully");
+        })
+        var qr_png = qrimage.image(answer.userInput);
+        qr_png.pipe(fs.createWriteStream('qr-code.png'));
+    })
