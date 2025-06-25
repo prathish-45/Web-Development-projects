@@ -13,8 +13,7 @@ app.get("/", (req, res) => {
 });
 
 var letterLength = (req, res, next) => {
-  var fullName = req.body['fName'] + req.body['lName'];
-  letterLen = fullName.length;
+  letterLen = req.body['fName'].length + req.body['lName'].length;
   next()
 }
 
