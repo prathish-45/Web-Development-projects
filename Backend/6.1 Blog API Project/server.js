@@ -21,7 +21,6 @@ app.get("/", async (req, res) => {
     res.status(500).json({ message: "Error fetching posts" });
   }
 });
-
 // Route to render the edit page
 app.get("/new", (req, res) => {
   res.render("modify.ejs", { heading: "New Post", submit: "Create Post" });
