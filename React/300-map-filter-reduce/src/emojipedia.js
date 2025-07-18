@@ -25,4 +25,4 @@ const emojipedia = [
 export default emojipedia;
 
 
-console.log(emojipedia.map((x) => x["meaning"].substring(0, 100)))
+// console.log(emojipedia.map((x) => x["meaning"].substring(0, 100)))

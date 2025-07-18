@@ -12,12 +12,12 @@ console.log(numbers.reduce((acc, curVal) => acc + curVal, 0));
 
 //Find - find the first item that matches from an array.
 
-console.log(numbers.find((x) => x > 10));
+// console.log(numbers.find((x) => x > 10));
 
 
 //FindIndex - find the index of the first item that matches.
 
-console.log(numbers.findIndex((x) => x > 10));
+// console.log(numbers.findIndex((x) => x > 10));
 
 
 // If you're running this locally in VS Code use the commands:
