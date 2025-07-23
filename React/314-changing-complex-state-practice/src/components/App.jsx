@@ -7,7 +7,8 @@ function App() {
     email: ""
   });
 
-  function handleChange(event) {
+  // Method 1
+ /*  function handleChange(event) {
     const {value, name} = event.target;
 
     setContact(preValue => {
@@ -29,6 +30,18 @@ function App() {
           lName: preValue.lName,
           email: value
         }
+      }
+    })
+  } */
+
+    // Method 2
+  
+  function handleChange(event) {
+    const {name, value} = event.target;
+    setContact(preValue => {
+      return {
+        ...preValue,
+        [name]: value
       }
     })
   }
