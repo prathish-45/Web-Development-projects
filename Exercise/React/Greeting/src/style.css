@@ -1,0 +1,37 @@
+body {
+    background-color: skyblue;
+}
+
+.createGreet {
+    margin-top: 200px;
+    text-align: center;
+}
+
+h1 {
+    color: antiquewhite;
+    font-size: 100px;
+    font-family: cursive;
+    margin: 10px;
+}
+
+input {
+    top: 100px;
+    padding: 10px;
+    border: 0;
+    border-radius: 10cm;
+}
+
+button {
+    margin: 10px;
+    padding: 10px;
+    border: 0;
+    border-radius: 10cm;
+}
+
+#greetHistory {
+    height: 50px;
+    width: 100px;
+    text-align: center;
+    background-color: aliceblue;
+}
+
