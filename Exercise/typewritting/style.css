@@ -1,0 +1,36 @@
+.nav-bar {
+    display: flex;
+    /* flex-direction: row; */
+    text-align: center;
+    justify-content: center;
+    gap: 50px;
+}
+
+.nav-bar a {
+    font-family: monospace;
+
+}
+
+
+
+#typing-text-container {
+    color: black;
+    font-family: monospace;
+    font-size: 2em;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.cursor {
+    display: inline;
+    background-color: black;
+    width: 2px;
+    height: 1.2em;
+    /* margin-left: 5px; */
+    animation: blink 0.5s infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}

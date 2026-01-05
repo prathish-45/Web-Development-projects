@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS</title>
+    <style>
+        
+       
+
+        .box-1 {
+            background-color: white;
+            display: inline-block;
+            height: 97px;
+            /* width: 97px; */
+            border: 2px solid black;
+            color: white;
+        }
+
+        .box-2 {
+            background-color: red;
+            display: inline-block;
+            position: relative;
+            height: 200px;
+            width: 200px;
+            border: 2px solid black;
+            color: red;
+            /* top: 30px; */
+        }
+        .box-3 {
+            background-color: white;
+            color: white;
+            display: block;
+            position: relative;
+            width: 76.5px;
+            height: 98px;
+            bottom: 101px;
+            border: 2px solid black;
+           
+        }
+
+        #box-id-2 {
+            position: relative;
+            bottom: 113px;
+        }
+
+        .box-4 {
+            background-color: blue;
+            color: blue;
+            display: inline-block;
+            position: relative;
+            bottom: 13px;
+            border: 2px solid black;
+            
+        }
+        .box-5 {
+            background-color: white;
+            color: white;
+            display: inline-block;
+            position: relative;
+            width: 150px;
+            bottom: 13px;
+            border: 2px solid black;
+        }
+
+        #inner-div {
+            display: inline-block;
+            position: relative;
+            top: 14px;
+        }
+        .box-6 {
+            background-color: white;
+            color: white;
+            position: relative;
+            height: 37px;
+            width: 45px;
+            border: 2px solid black;
+        }
+        .box-7 {
+            background-color: yellow;
+            color: yellow;
+            position: relative;
+            top: 3px;
+            height: 37px;
+            width: 45px;
+            border: 2px solid black;
+        }
+
+        
+        
+    </style>
+</head>
+<body>
+    <div id="box-id">
+        <div class="box-1">
+            <h1>Box 1</h1>
+        </div>
+        <div class="box-2">
+            <h1>Box 2</h1>
+        </div>
+        <div class="box-3">
+            <h1>Box 3</h1>
+        </div>
+    </div>
+    <div id="box-id-2">
+        <div class="box-4">
+            <h1>Box 4</h1>
+        </div>
+        <div class="box-5">
+            <h1>Box 5</h1>
+        </div>
+        <div id="inner-div">
+            <div class="box-6">
+                <!-- <h1>Box 6</h1> -->
+            </div>
+            <div class="box-7">
+                <!-- <h1>Box 7</h1> -->
+            </div>
+        </div>
+        
+    </div>
+    
+</body>
+</html>

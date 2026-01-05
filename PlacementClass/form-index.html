@@ -1,0 +1,457 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    
+    
+    <script src="three.r134.min.js"></script>
+<script src="vanta.net.min.js"></script>
+    <style>
+        /* body {
+            font-family: Arial, sans-serif;
+            background-image: url("./download.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        #form {
+            border: 5px solid rgb(205, 206, 202);
+            padding: 10px 30px 25px 30px;
+            border-radius: 20px;
+            display: inline-block;
+            margin: 5% 25% 25% 20%;
+            background-color: rgb(205, 206, 202);
+            width: 20%;
+            opacity: 0.9;
+        }
+        div input {
+            width: 100%;
+            padding: 8px;
+            border-radius: 5px;
+            border: none;
+        }
+
+        #form #form-gender input{
+            display: inline-block;
+            width: 10%;
+        }
+
+        #form #form-skills input{
+            display: inline-block;
+            width: 10%;
+        }
+
+        #register {
+            background-color: blue;
+            color: white;
+            padding: 10px 15px 10px 15px;
+            border-radius: 10px;
+            border: none;
+            cursor: pointer;
+            text-align: center;
+            margin-left: 35%;
+        } */
+
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url("./ourMoon.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+        }
+
+        #main-container {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #container {
+            width: 400px;
+            padding: 20px;
+            border: 2px solid white;
+            border-radius: 10px;
+            box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            text-align: center;
+            color: white;
+        }
+
+        label {
+            color: white;
+        }
+
+        .form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .form label {
+            font-weight: bold;
+            font-family: "Segoe UI Semibold", Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .form input {
+            border-radius: 5px;
+            border:0;
+            height: 30px;
+            background-color: whitesmoke
+        }
+
+        .form input:hover {
+            border: 2px solid blue;
+            background-color: white;
+        }
+
+        .form select {
+            width: 70px;
+        }
+
+        .form input[type="radio" i], .form input[type="checkbox" i] {
+            width: auto;
+            /* margin-right: 5px; */
+            margin: 0;
+        }
+
+        .choice {
+            position: relative;
+            bottom: 10px;
+            margin-right: 10px;
+        }
+
+
+        button {
+            width: 100px;
+            height: 40px;
+            font-size: 20px;
+            text-align: center;
+            border: 0;
+            border-radius: 10px;
+            background-color: rgb(43, 43, 255);
+            color: white;
+            margin-left: 37.5%;
+        }
+
+        button:hover {
+            background-color: aqua;
+            color: black;
+            transition:ease-in-out;
+            transition-delay: 0.2s;
+        }
+    </style>
+</head>
+<body>
+    <div id="main-container">
+        <div id="container">
+            <h1>Registration Form</h1>
+            <form action="" class="form">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username">
+            
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password">
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email">
+            
+            <div id="form-gender">
+                <label for="Gender">Gender:</label><br>
+                <input type="radio" id="male" name="gender" value="male">
+                <label for="male" class="choice">Male</label>
+                <input type="radio" id="female" name="gender" value="female">
+                <label for="female" class="choice">Female</label>
+            </div>
+            
+            
+            <div id="form-skills">
+                <label for="skills">skills:</label><br>
+                <input type="checkbox" id="python" name="coding" value="python">
+                <label for="python" class="choice">Python</label>
+                <input type="checkbox" id="java" name="coding" value="java">
+                <label for="java" class="choice">Java</label>
+                <input type="checkbox" id="html" name="coding" value="html">
+                <label for="html" class="choice">HTML</label>
+            </div>
+            
+            <label for="location">Location:</label>
+            <select name="location" id="location">
+                <option value="usa">USA</option>
+                <option value="canada">Canada</option>
+                <option value="uk">UK</option>
+                <option value="australia">Australia</option>
+            </select>
+            <br>
+            <button type="button" id="register" onclick="registerFun()">Submit</button>
+        </form>
+        </div>
+    </div>
+
+    // <script>
+        
+        function registerFun() {
+            let name = document.getElementById("username").value;
+            if(/[@#$*+]/.test(name)) {
+                alert("Username must contain special characters");
+            }
+            if ((/[A-Z]/.test(name))) {
+                alert("Username must be in lowercase");
+            }
+
+
+            let password = document.getElementById("password").value;
+            if(password.length < 8) {
+                alert("Your password must be atleast 8 characters");
+            } 
+            if (!(/[0-9]/.test(password))) {
+                alert("Your password must contain at least one number");
+            } if (!(/[@#$*+]/.test(password))) {
+                alert("It must include special characters");
+            } if (!(/[A-Z]/.test(password))) {
+                alert("It must contain one uppercase");
+            }
+            let email = document.getElementById("email").value;
+            if (!(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email))) {
+                alert("Invalid Email");
+            }
+
+            let genderGroup = document.getElementsByName("gender");
+            let genderName = "";
+            for(let val of genderGroup) {
+                if (val.checked) {
+                    genderName = val.value;
+                    break;
+                }
+            }
+            
+            let skills = [];
+            let skillGroup = document.getElementsByName("coding");
+            for(let val of skillGroup) {
+                if(val.checked) {
+                    skills.push(val.value);
+                }
+            }
+
+            let location = document.getElementById("location").value;
+
+           
+        }
+        let submitListen = document.getElementById("register");
+
+            submitListen.addEventListener("click", () => {
+                alert("Your form is submitted");
+                console.log("submitted");
+                
+            });
+    </script>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow: hidden; /* Keeps the animation clean */
+        }
+
+        #main-container {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #container {
+            width: 400px;
+            padding: 20px;
+            /* Made the border subtle and background semi-transparent for the 'glass' look */
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 10px;
+            background: rgba(0, 0, 0, 0.4); 
+            backdrop-filter: blur(5px);
+            box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.5);
+            z-index: 10;
+        }
+
+        h1, label {
+            color: white;
+            text-align: center;
+        }
+
+        .form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .form select {
+            width: 70px;
+        }
+
+        .form label {
+            font-weight: bold;
+            font-family: "Segoe UI Semibold", Tahoma, sans-serif;
+        }
+
+        .form input {
+            border-radius: 5px;
+            border: 0;
+            height: 30px;
+            background-color: whitesmoke;
+            padding: 0 10px;
+        }
+
+        .choice {
+            margin-right: 10px;
+            font-weight: normal !important;
+        }
+
+        button {
+            width: 120px;
+            height: 40px;
+            font-size: 18px;
+            border: 0;
+            border-radius: 10px;
+            background-color: rgb(43, 43, 255);
+            color: white;
+            cursor: pointer;
+            align-self: center;
+            margin-top: 15px;
+        }
+
+        button:hover {
+            background-color: aqua;
+            color: black;
+            transition: 0.3s;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="main-container">
+        <div id="container">
+            <h1>Registration</h1>
+            <form id="regForm" class="form">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username">
+                
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password">
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email">
+                
+                <div id="form-gender">
+                    <label>Gender:</label><br>
+                    <input type="radio" id="male" name="gender" value="male">
+                    <label for="male" class="choice">Male</label>
+                    <input type="radio" id="female" name="gender" value="female">
+                    <label for="female" class="choice">Female</label>
+                </div>
+
+                <div id="form-skills">
+                    <label for="skills">skills:</label><br>
+                    <input type="checkbox" id="python" name="coding" value="python">
+                    <label for="python" class="choice">Python</label>
+                    <input type="checkbox" id="java" name="coding" value="java">
+                    <label for="java" class="choice">Java</label>
+                    <input type="checkbox" id="html" name="coding" value="html">
+                    <label for="html" class="choice">HTML</label>
+                </div>
+
+                <!-- <label for="location">Location:</label>
+                <select name="location" id="location">
+                    <option value="usa">USA</option>
+                    <option value="canada">Canada</option>
+                    <option value="uk">UK</option>
+                    <option value="australia">Australia</option>
+                </select> -->
+                
+                <button type="button" id="register">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // 1. Initialize Vanta Background
+        // Use #main-container as the target
+        VANTA.NET({
+            el: "#main-container", 
+            mouseControls: true,
+            touchControls: true,
+            gyroControls: false,
+            minHeight: 200.00,
+            minWidth: 200.00,
+            scale: 1.00,
+            scaleMobile: 1.00,
+            color: 0x3fbbff,
+            backgroundColor: 0x070714,
+            points: 10.00,
+            maxDistance: 20.00,
+            spacing: 15.00
+        });
+
+        // 2. Validation Logic
+        function registerFun() {
+            let name = document.getElementById("username").value;
+            let password = document.getElementById("password").value;
+            let email = document.getElementById("email").value;
+
+            // Username Checks
+            if (/[@#$*+]/.test(name)) {
+                alert("Username cannot contain special characters");
+                return false;
+            }
+            if (/[A-Z]/.test(name)) {
+                alert("Username must be in lowercase");
+                return false;
+            }
+
+            // Password Checks
+            if (password.length < 8) {
+                alert("Password must be at least 8 characters");
+                return false;
+            }
+            if (!(/[0-9]/.test(password)) || !(/[@#$*+]/.test(password)) || !(/[A-Z]/.test(password))) {
+                alert("Password must include a number, special character, and uppercase letter");
+                return false;
+            }
+
+            // Email Check
+            if (!(/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email))) {
+                alert("Invalid Email format");
+                return false;
+            }
+
+            return true;
+        }
+
+        // 3. Event Listener
+        document.getElementById("register").addEventListener("click", () => {
+            if (registerFun()) {
+                alert("Your form is submitted successfully!");
+                console.log("Form data sent.");
+            }
+        });
+    </script>
+</body>
+</html>

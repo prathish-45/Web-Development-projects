@@ -1,0 +1,38 @@
+.section1 {
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+}
+
+.logo-sec {
+    padding: 5px;
+}
+
+
+.nav-bar {
+    display: flex;
+    gap: 50px;
+    text-align: center;
+    justify-content: center;
+    /* margin-top: 10px; */
+}
+
+.nav-bar a {
+    text-decoration: none;
+    font-family: monospace;
+    font-size: 20px;
+    color: black;
+    padding: 5px 8px 5px 8px;
+    border-radius: 10px;
+    transition: 0.3s;
+    /* border: 2px solid black */
+}
+
+.nav-bar a:hover {
+    background-color: blue;
+    color: white;
+    transform: scale(1.05);
+}
+
+
+
